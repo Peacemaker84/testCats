@@ -2,8 +2,10 @@ const container = document.querySelector("main");
 const popupBlock = document.querySelector(".popup-wrapper");
 const popupAdd = popupBlock.querySelector(".popup-add");
 const popupUpd = popupBlock.querySelector(".popup-upd");
+
 const addForm = document.forms.addForm;
 const updForm = document.forms.updForm;
+const InfoForm = document.forms.InfoForm;
 const cards = document.getElementsByClassName("card");
 
 document.getElementById("user").addEventListener("click", function () {
@@ -15,6 +17,17 @@ if (!user) {
   user = prompt("Представьтесь, пожалуйста");
   localStorage.setItem("catUser", user);
 }
+
+const popupInfo = document.querySelector(".popup-info");
+popupInfo.querySelector(".info-close").addEventListener("click", function () {
+  popupBlock.classList.remove("active");
+});
+//console.log(popupInfo);
+
+document.querySelector(".logo").addEventListener("click", function (e) {
+  e.preventDefault();
+  popupBlock.classList.add("active");
+});
 
 popupBlock.querySelectorAll(".popup__close").forEach(function (btn) {
   btn.addEventListener("click", function () {
@@ -70,7 +83,7 @@ const createCard = function (cat, parent) {
     let catCard = document.querySelectorAll(".card");
     for (let i = 0; i < catCard.length; i++) {
       catCard[i].addEventListener("click", function () {
-        const PoBlock = document.querySelector(".oKote-wrapper");
+        const PoBlock = document.querySelector(".popup-info");
         PoBlock.classList.add("active");
       });
     }

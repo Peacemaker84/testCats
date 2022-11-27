@@ -157,3 +157,41 @@ Form {
   background-color: red;
   color: #fff;
 }
+.popup-info {
+  width: 340px;
+  padding: 10px;
+  background-color: #fff;
+  position: relative;
+  border-radius: 10px;
+  display: grid;
+  grid-template-columns: repeat(2, 300px);
+}
+.info-close {
+  width: 30px;
+  height: 30px;
+  border: 1px solid;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  cursor: pointer;
+  position: absolute;
+  top: 10px;
+  right: 8px;
+  /* margin-right: 10px; */
+}
+.popup-info.active {
+  display: block;
+}
+.info-close::after {
+  content: "\26CC";
+}
+.info-close:hover {
+  background-color: green;
+  color: #fff;
+  border-color: red;
+  color: red;
+  border-radius: 50px;
+}
+.info-img {
+  width: 100%;
+}
