@@ -1,0 +1,159 @@
+body {
+  margin: 0;
+  font-family: sans-serif;
+}
+a {
+  text-decoration: none;
+  color: inherit;
+}
+
+.wrapper {
+  width: 1000px;
+  margin: auto;
+  min-height: 100vh;
+  background: rgb(241, 195, 108);
+  display: grid;
+  gap: 30px;
+  grid-template-rows: 70px 1fr 50px;
+}
+header,
+footer {
+  background-color: #222;
+  color: #fff;
+  padding: 0 30px;
+  display: flex;
+  align-items: center;
+}
+
+nav {
+  display: flex;
+  gap: 20px;
+}
+
+header {
+  justify-content: space-between;
+}
+footer {
+  justify-content: center;
+}
+
+h1,
+h2,
+h3 {
+  margin: 0;
+}
+
+main {
+  padding: 0 30px;
+  display: grid;
+  grid-template-columns: repeat(3, 1fr);
+  align-content: flex-start;
+  gap: 30px;
+}
+.card {
+  display: flex;
+  flex-direction: column;
+  gap: 20px;
+  padding: 10px;
+  border: 1px solid;
+  border-radius: 10px;
+}
+.card-pic {
+  background-position: center;
+  background-size: cover;
+  background-repeat: no-repeat;
+  background-color: #dedede;
+  height: 180px;
+  border-radius: 10px;
+  cursor: pointer;
+  filter: grayscale(1);
+  transition: 0.3s linear;
+}
+
+.card:hover {
+  border: 2px solid blue;
+}
+
+.card-pic:hover {
+  filter: grayscale(0);
+}
+.card h3 {
+  text-align: center;
+}
+
+.popup-wrapper {
+  position: fixed;
+  top: 0;
+  left: 0;
+  right: 0;
+  bottom: 0;
+  background-color: #0008;
+  backdrop-filter: blur(1px);
+  justify-content: center;
+  align-items: center;
+  display: none;
+}
+.popup-wrapper.active {
+  display: flex;
+}
+
+.popup {
+  width: 300px;
+  padding: 20px;
+  background-color: #fff;
+  position: relative;
+  border-radius: 10px;
+  display: none;
+}
+.popup.active {
+  display: block;
+}
+.popup__close {
+  width: 30px;
+  height: 30px;
+  border: 1px solid;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  cursor: pointer;
+  position: absolute;
+  top: 10px;
+  right: 10px;
+  margin-right: 10px;
+}
+.popup__close:hover {
+  background-color: green;
+  color: #fff;
+  border-color: red;
+  color: red;
+  border-radius: 50px;
+}
+.popup__close::after {
+  content: "\26CC";
+}
+
+Form {
+  display: grid;
+  gap: 20px;
+}
+
+.btn:hover {
+  color: orange;
+}
+.logo:hover {
+  color: orange;
+}
+.editCat {
+  border-radius: 5px;
+}
+.deletetCat {
+  border-radius: 5px;
+}
+.editCat:hover {
+  background-color: green;
+  color: #fff;
+}
+.deletetCat:hover {
+  background-color: red;
+  color: #fff;
+}
